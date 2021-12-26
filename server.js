@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 mongoose.connect(MONGODB_URI || 'mongodb://localhost/social-network');
+mongoose.set('debug', true);
 
 app.listen(PORT, () => {
 	console.log(`Server listening on port ${PORT}`);
